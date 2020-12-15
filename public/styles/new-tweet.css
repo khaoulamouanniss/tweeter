@@ -28,6 +28,7 @@ font-family: 'Bungee', cursive;
 
 .counter{
   display: flex;
+  color: black;
   }
 
 /*hr {

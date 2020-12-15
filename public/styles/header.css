@@ -11,7 +11,7 @@ header {
   justify-content: center;
   }
 
-.name {
+header > h2 {
   text-align: center;
 }
 
