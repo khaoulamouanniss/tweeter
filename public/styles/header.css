@@ -1,0 +1,18 @@
+header {
+  height: 400px;
+  width: 100%;
+  background-color: #d1d112d0;
+  background-image: url("https://www.transparenttextures.com/patterns/ps-neutral.png");
+
+}
+.profil {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  }
+
+h2 {
+  text-align: center;
+}
+
+
