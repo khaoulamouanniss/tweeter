@@ -1,0 +1,40 @@
+
+
+.blue-btn {
+  background-color: #4056A1;
+  color: #ffffff;
+  display: flex;
+
+}
+
+textarea {
+  border: none;
+  width:100%;
+  background-color: #f4f1ec;
+  border-bottom: 4px solid #000;
+
+}
+
+.add{
+  text-align: left;
+  margin-left: 20px;
+}
+
+.add-tweet {
+display: flex;
+justify-content: space-between;
+font-family: 'Bungee', cursive;
+}
+
+.counter{
+  display: flex;
+  }
+
+/*hr {
+  width: 80%;
+  margin-left: 0px;
+  margin-top: 0px;
+  text-align: left;
+  border: 2px solid #000;
+}*/
+

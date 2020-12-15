@@ -1,24 +1,27 @@
 nav {
 
   height: 120px;
-  width: 10;
+  width: 100%;
   background-color: #4056A1;
   color: #ffffff;
   display: flex;
   justify-content: space-between;
-  margin: 1em;
-
-
 }
 
 nav span {
   display: flex;
   font-family: 'Bungee', cursive;
   padding: 1.5em;
-  -ms-flex-item-align: left;
+
 }
 
-nav btn {
+.btn {
   display: flex;
-  -ms-flex-item-align: right;
+  flex-direction: column;
+  justify-content: start;
+}
+
+.sub {
+  display: flex;
+  align-self: center;
 }
