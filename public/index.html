@@ -20,12 +20,14 @@
     <link rel="stylesheet" href="./styles/nav.css" type="text/css" />
     <link rel="stylesheet" href="./styles/header.css" type="text/css" />
     <link rel="stylesheet" href="./styles/new-tweet.css" type="text/css" />
+    <link rel="stylesheet" href="./styles/tweets.css" type="text/css" />
 
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
     <!-- App JS -->
     <script type="text/javascript" src="./scripts/client.js"></script>
+    <script src="./scripts/composer-char-counter.js"></script>
   </head>
 
   <body>
@@ -67,17 +69,35 @@
           </form>
         </div>
       </section>
-      <article>
+
+    <section id="tweets">
+      <article class="tweet">
         <header>
-          <h2>Google Chrome</h2>
+          <div class="profil">
+          <img class="pic" src="./images/profil1.png">
+          <divx>
+          <p>Name1</p>
+        </div>
+        </div>
+          <p class="at">@SirIss</p>
         </header>
-        <body>
-        Google Chrome is a web browser developed by Google, released in 2008. Chrome is the world's most popular web browser today!
-        </body>
-        <footer></footer>
+        <div class="txt">
+        Google Chrome is a web browser developed by Google, released in 2008.
+        </div>
+        <hr></hr>
+        <footer>
+          <div class="time">
+          <p>10 days ago</p>
+        </div>
+          <div class="reaction">
+          <input type="image" src="./images/react1.png" alt="Submit" >
+          <input type="image" src="./images/react2.png" alt="Submit" >
+          <input type="image" src="./images/react3.png" alt="Submit" >
+        </div>
+        </footer>
 
         </article>
+      </section>
     </main>
-    <script src="./scripts/composer-char-counter.js"></script>
   </body>
 </html>

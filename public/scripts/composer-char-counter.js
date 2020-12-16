@@ -10,9 +10,3 @@ $('#tweet-text').bind('input propertychange', function() {
   }
 });
 });
-
-
-
-/*child.addEventListener('click', function(event) {
-  event.stopPropagation();
- });*/
