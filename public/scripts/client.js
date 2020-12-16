@@ -76,14 +76,13 @@ const renderTweets = function(tweets, section) {
   // takes return value and appends it to the tweets container
   for ( let t of tweets) {
     let $tweet = createTweetElement(t);
-    section.append($tweet);
+    section.prepend($tweet);
   }
 };
 
 const loadTweets = function() {
   $.ajax('/tweets/', {method: 'GET'})
   .then (function (data) {
-    console.log(data);
 
       renderTweets(data,$('#tweets'));
 
@@ -94,12 +93,19 @@ $("#submit-tweet").on('submit', (function(event) {
   event.preventDefault();
 
   const tweetMessage =  $(this).serialize();
+  if (tweetMessage.slice(5).length > 140) {
+    alert("Your tweet is too long!");
+  } else if (tweetMessage.slice(5) === "") {
+    alert ("You didn't tweet anything!");
+  } else {
+    $.ajax('/tweets/', {method: 'POST', data: tweetMessage})
+    .then(function (data) {
+      loadTweets();
+      $("#submit-tweet").children("#tweet-text").text("");
+    });
+  }
 
-  $.ajax('/tweets/', {method: 'POST', data: tweetMessage})
-  .then(function (data) {
 
-
-});
 }));
 
 loadTweets();
