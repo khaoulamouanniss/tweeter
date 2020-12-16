@@ -37,66 +37,35 @@
       <div class="btn">
         <p>Write a new tweet</p>
         <div class="sub">
-        <input type="image" src="./images/btn.png" alt="Submit" >
-      </div>
+          <input type="image" src="./images/btn.png" alt="Submit" >
+        </div>
       </div>
 
     </nav>
 
     <header>
       <div class="profil">
-          <img src="./images/profile-hex.png">
-
-    </div>
-    <br>
-
-          <h2>Khaoula</h2>
-
-  </header>
+        <img src="./images/profile-hex.png">
+      </div>
+        <h2 id="name">Khaoula</h2>
+    </header>
 
     <!-- Page-specific (main) content here -->
     <main class="container">
       <section>
         <div class="add">
-        <h2>Compose Tweet</h2>
-        <form action="/tweets/)" method="POST">
-          <label for="tweet-text">What are you humming about?</label>
-          <textarea name="text" id="tweet-text"></textarea>
-          <div class="add-tweet">
-            <button id="btn-tweet" class="blue-btn" type="submit">Tweet</button>
-            <output name="counter" class="counter" for="tweet-text">140</output>
-          </div>
+          <h2>Compose Tweet</h2>
+          <form id = "submit-tweet" action="/tweets/" method="POST">
+            <label for="tweet-text">What are you humming about?</label>
+            <textarea name="text" id="tweet-text"></textarea>
+            <div class="add-tweet">
+              <button id="btn-tweet" class="blue-btn" type="submit">Tweet</button>
+              <output name="counter" class="counter" for="tweet-text">140</output>
+            </div>
           </form>
         </div>
       </section>
-
-    <section id="tweets">
-      <!--<article class="tweet">
-        <header>
-          <div class="profil">
-          <img class="pic" src="./images/profil1.png">
-          <divx>
-          <p>Name1</p>
-        </div>
-        </div>
-          <p class="at">@SirIss</p>
-        </header>
-        <div class="txt">
-        Google Chrome is a web browser developed by Google, released in 2008.
-        </div>
-        <hr></hr>
-        <footer>
-          <div class="time">
-          <p>10 days ago</p>
-        </div>
-          <div class="reaction">
-          <input type="image" src="./images/react1.png" alt="Submit" >
-          <input type="image" src="./images/react2.png" alt="Submit" >
-          <input type="image" src="./images/react3.png" alt="Submit" >
-        </div>
-        </footer>
-
-        </article>-->
+      <section id="tweets">
       </section>
     </main>
   </body>
