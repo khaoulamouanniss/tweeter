@@ -51,7 +51,7 @@ const createTweetElement = function(data) {
           <p class="at">${data.user.handle}</p>
         </header>
         <div class="txt">
-        ${data.content.text}
+        ${escape(data.content.text)}
         </div>
         <hr></hr>
         <footer>
@@ -89,6 +89,12 @@ const loadTweets = function() {
   });
 };
 
+const escape =  function(str) {
+  let div = document.createElement('div');
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+}
+
 $("#submit-tweet").on('submit', (function(event) {
   event.preventDefault();
 
@@ -101,7 +107,7 @@ $("#submit-tweet").on('submit', (function(event) {
     $.ajax('/tweets/', {method: 'POST', data: tweetMessage})
     .then(function (data) {
       loadTweets();
-      $("#submit-tweet").children("#tweet-text").text("");
+      $("#submit-tweet").children("#tweet-text").empty();
     });
   }
 
