@@ -32,4 +32,15 @@ font-family: 'Bungee', cursive;
   }
 
 
+  .error {
+    background: #c51244 !important;
+    padding: 10px !important;
+    border-radius: 0 !important;
+    color: black;
+    position: relative;
+    box-shadow: 1px 1px 1px #aaaaaa;
+    margin-bottom: 10px;
+    width: auto;
+    height: 40px;
+  }
 

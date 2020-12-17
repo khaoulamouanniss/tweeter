@@ -99,15 +99,26 @@ $("#submit-tweet").on('submit', (function(event) {
   event.preventDefault();
 
   const tweetMessage =  $(this).serialize();
+console.log(tweetMessage.slice(5));
   if (tweetMessage.slice(5).length > 140) {
-    alert("Your tweet is too long!");
+    console.log($("#submit-tweet").children()[2].type)
+    $("#submit-tweet").children()[2].type = "text";
+    $("#submit-tweet").children()[2].value = "Your tweet is too long!";
+
   } else if (tweetMessage.slice(5) === "") {
-    alert ("You didn't tweet anything!");
+    console.log($("#submit-tweet").children()[2].type)
+    //console.log($(this))
+    slideDown()
+    $("#submit-tweet").children()[2].type = "text";
+    $("#submit-tweet").children()[2].value = "You didn't tweet anything!";
+
   } else {
+    console.log('else')
     $.ajax('/tweets/', {method: 'POST', data: tweetMessage})
     .then(function (data) {
+      $("#submit-tweet").children()[2].type = "hidden";
       loadTweets();
-      $("#submit-tweet").children("#tweet-text").empty();
+      $("#submit-tweet").children()[2].value="";
     });
   }
 
