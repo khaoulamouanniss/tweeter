@@ -4,7 +4,8 @@
   background-color: #4056A1;
   color: #ffffff;
   display: flex;
-
+  border: none;
+  padding: 6px;
 }
 
 textarea {
@@ -12,7 +13,8 @@ textarea {
   width:100%;
   background-color: #f4f1ec;
   border-bottom: 4px solid #000;
-
+  font-family: 'Source Sans Pro', sans-serif;
+  padding: initial;
 }
 
 .add{
@@ -37,7 +39,8 @@ font-family: 'Bungee', cursive;
     padding: 10px !important;
     border-radius: 0 !important;
     background: invisible;
-    color: red solid;
+    color: red;
+    font-weight: bolder;
     box-shadow: 2px 2px 2px #aaaaaa;
     margin-bottom: 10px;
     width: auto;

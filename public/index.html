@@ -43,22 +43,22 @@
 
     </nav>
 
-    <header>
-      <div class="profil">
-        <img src="./images/profile-hex.png">
-      </div>
-        <h2 id="name">Khaoula</h2>
+    <header class= "feature">
+
+        <img class="profil" src="./images/profile-hex.png">
+
+        <h2>Khaoula</h2>
     </header>
 
     <!-- Page-specific (main) content here -->
-    <main class="container">
+    <main class="content">
       <section>
         <div class="add">
           <h2>Compose Tweet</h2>
           <form id = "submit-tweet" action="/tweets/" method="POST">
             <label for="tweet-text">What are you humming about?</label>
             <textarea name="text" id="tweet-text" rows="2" cols="50"></textarea>
-            <input  class="error" id="error"></input>
+            <input  class="error"></input>
             <div class="add-tweet">
               <button id="btn-tweet" class="blue-btn" type="submit">Tweet</button>
               <output name="counter" class="counter" for="tweet-text">140</output>

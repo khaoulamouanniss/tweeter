@@ -19,13 +19,34 @@ body {
   background-color: #f4f1ec;
   font-size: 24px;
   font-family: 'Source Sans Pro', sans-serif;
+
 }
 
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
-main{
+.content {
   width: 90%;
   text-align: center;
   background-color: #f4f1ec;
+  flex-direction: column;
 }
+
+@media only screen and (min-width: 768px) {
+  body {
+    display: flex;
+    flex-direction: row;
+  }
+  header.feature {
+    display: flex;
+    width: 30%;
+    height:auto;
+  }
+  .content {
+    display: flex;
+
+    margin-top: 120px;
+  }
+
+}
+

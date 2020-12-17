@@ -1,4 +1,4 @@
-article {
+.tweet {
 border: 4px solid black;
 width: 100%;
 margin-top: 10px;
@@ -9,11 +9,11 @@ font-family: 'Source Sans Pro', sans-serif;
 font-weight: lighter;
 }
 
-article:hover .at{
+.tweet:hover .at{
 display: block;
 }
 
-article:hover {
+.tweet:hover {
   box-shadow: 10px 10px;
   font-weight: bolder;
 }
