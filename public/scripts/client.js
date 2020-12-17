@@ -4,7 +4,7 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 $(document).ready(function() {
-
+  $(".error").hide();
 const data = [
   {
     "user": {
@@ -59,6 +59,7 @@ const createTweetElement = function(data) {
           <p>${dateOfTweet}</p>
         </div>
           <div class="reaction">
+          <i class="far fa-flag"></i>
           <input type="image" src="./images/react1.png" alt="Submit" >
           <input type="image" src="./images/react2.png" alt="Submit" >
           <input type="image" src="./images/react3.png" alt="Submit" >
@@ -101,24 +102,20 @@ $("#submit-tweet").on('submit', (function(event) {
   const tweetMessage =  $(this).serialize();
 console.log(tweetMessage.slice(5));
   if (tweetMessage.slice(5).length > 140) {
-    console.log($("#submit-tweet").children()[2].type)
-    $("#submit-tweet").children()[2].type = "text";
-    $("#submit-tweet").children()[2].value = "Your tweet is too long!";
 
+    $(this).children()[2].value = "Your tweet is too long!";
+    $(".error").slideDown(100);
   } else if (tweetMessage.slice(5) === "") {
-    console.log($("#submit-tweet").children()[2].type)
-    //console.log($(this))
-    slideDown()
-    $("#submit-tweet").children()[2].type = "text";
-    $("#submit-tweet").children()[2].value = "You didn't tweet anything!";
-
+    $(this).children()[2].value = "You didn't tweet anything!";
+    $(".error").slideDown(100);
   } else {
     console.log('else')
     $.ajax('/tweets/', {method: 'POST', data: tweetMessage})
     .then(function (data) {
-      $("#submit-tweet").children()[2].type = "hidden";
+      $(".error").slideUp();
+      $(this).children()[2].value="";
       loadTweets();
-      $("#submit-tweet").children()[2].value="";
+
     });
   }
 

@@ -33,12 +33,12 @@ font-family: 'Bungee', cursive;
 
 
   .error {
-    background: #c51244 !important;
+    border: red solid!important;
     padding: 10px !important;
     border-radius: 0 !important;
-    color: black;
-    position: relative;
-    box-shadow: 1px 1px 1px #aaaaaa;
+    background: invisible;
+    color: red solid;
+    box-shadow: 2px 2px 2px #aaaaaa;
     margin-bottom: 10px;
     width: auto;
     height: 40px;
