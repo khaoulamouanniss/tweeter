@@ -36,15 +36,15 @@ body {
   body {
     font-size: 20px;
   }
-  body .h {
+  body .actual-profile {
     height: 170px;
   }
-  body .h .profile-pic {
+  body .actual-profile .profile-pic {
     margin-top: 5px;
     width: 100px;
     height: 100px;
   }
-  body .h h2 {
+  body .actual-profile h2 {
     font-size: 20px;
   }
 }
@@ -53,10 +53,10 @@ body {
   body {
     font-size: 25px;
   }
-  body .h {
+  body .actual-profile {
     height: 250px;
   }
-  body .h .profile-pic {
+  body .actual-profile .profile-pic {
     margin-top: 5px;
     width: 150px;
     height: 150px;
@@ -68,7 +68,7 @@ body {
     display: flex;
     flex-direction: row;
   }
-  body .h {
+  body .actual-profile {
     display: flex;
     width: 30%;
     margin: 30px;
@@ -87,19 +87,19 @@ body {
     display: flex;
     flex-direction: row;
   }
-  body .h {
+  body .actual-profile {
     height: 550px;
     display: flex;
     width: 30%;
     margin: 30px;
     margin-top: 170px;
   }
-  body .h .profile-pic {
+  body .actual-profile .profile-pic {
     margin-top: 5px;
     width: 400px;
     height: 400px;
   }
-  body .h h2 {
+  body .actual-profile h2 {
     font-size: 50px;
   }
   body .content {

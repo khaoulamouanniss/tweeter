@@ -1,5 +1,5 @@
 /*The class of header*/
-.h {
+.actual-profile {
   height: 400px;
   width: 100%;
   background-color: #f3f16bf3;
@@ -9,10 +9,10 @@
   flex-direction: column;
   align-items: center;
 }
-.h h2 {
+.actual-profile h2 {
   display: flex;
 }
-.h .profile-pic {
+.actual-profile .profile-pic {
   display: flex;
   margin-top: 20px;
 }

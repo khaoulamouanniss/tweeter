@@ -9,11 +9,11 @@
   font-weight: lighter;
 }
 
-.tweet:hover .at {
+.tweet:hover .handle {
   display: block;
 }
 
-.at {
+.handle {
   display: none;
 }
 
@@ -34,7 +34,7 @@ article.tweet header {
   background-image: none;
 }
 
-.profil {
+.profile {
   display: flex;
 }
 

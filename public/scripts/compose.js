@@ -6,17 +6,18 @@ $(document).ready(function() {
   $("#up").on('click', (function(event) {
     event.preventDefault();
     $(window).scrollTop(0);
-    $(".add").slideDown(1000);
+    $(".new-tweet-box").slideDown(1000);
+    $(".create-new-tweet").hide();
   }));
 
   $(window).scroll(function() {
     $("#up").slideDown(200);
-    $(".btn").hide();
-    $(".add").hide();
+    $(".create-new-tweet").hide();
+    $(".new-tweet-box").hide();
     if($(this).scrollTop() === 0 ) {
       $("#up").hide();
-      $(".btn").slideDown();
-
+      $(".new-tweet-box").slideDown();
+      $(".create-new-tweet").hide();
   }});
 
 });

@@ -39,28 +39,28 @@
     <!-- Top nav bar (fixed) -->
     <nav>
       <span>tweeter</span>
-      <div class="btn">
+      <div class="create-new-tweet">
         <p>Write a new tweet</p>
-        <div class="sub">
+        <div class="button-new-tweet">
           <input id="open-new-tweet" type="image" src="./images/btn.png" alt="Submit" >
         </div>
       </div>
     </nav>
 
-    <header class="h">
+    <header class="actual-profile">
       <img class="profile-pic" src="./images/profile-200.png"/>
       <h2>Khaoula</h2>
     </header>
 
     <!-- Page-specific (main) content here -->
     <main class="content">
-      <section class="add">
+      <section class="new-tweet-box">
           <form id = "submit-tweet" action="/tweets/" method="POST">
             <label for="tweet-text">What are you humming about?</label>
             <textarea id="tweet-text" name="text"  rows="2" cols="50"></textarea>
             <input  class="error" ></input>
             <div class="add-tweet">
-              <button id="btn-tweet" class="blue-btn" type="submit">Tweet</button>
+              <button id="submit-tweet" class="blue-btn" type="submit">Tweet</button>
               <output name="counter" class="counter" for="tweet-text">140</output>
             </div>
           </form>

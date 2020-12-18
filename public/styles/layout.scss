@@ -42,7 +42,7 @@ body {
   body {
     font-size: 20px;
 
-    .h {
+    .actual-profile {
       height:170px;
 
       .profile-pic {
@@ -62,7 +62,7 @@ body {
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
   body {
     font-size: 25px;
-    .h {
+    .actual-profile {
       height:250px;
       .profile-pic {
         margin-top: 5px;
@@ -79,7 +79,7 @@ body {
     display: flex;
     flex-direction: row;
 
-    .h {
+    .actual-profile {
       display: flex;
       width:30%;
       margin: 30px;
@@ -99,7 +99,7 @@ body {
     font-size: 35px;
     display: flex;
     flex-direction: row;
-    .h {
+    .actual-profile {
       height: 550px;
       display: flex;
       width:30%;

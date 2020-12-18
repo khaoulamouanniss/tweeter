@@ -7,7 +7,7 @@ $(document).ready(function() {
 
   // The error message, the box for adding new tweet and the button up will be hidden in the beginning
   $(".error").hide();
-  $(".add").hide();
+  $(".new-tweet-box").hide();
   $("#up").hide();
 
   //loal data to load
@@ -52,13 +52,13 @@ $(document).ready(function() {
   const createTweetElement = function(data) {
     const $tweet = $(`<article class="tweet">
           <header>
-            <div class="profil">
+            <div class="profile">
             <img class="pic" src=${data.user.avatars}>
             <div>
             <p>${data.user.name}</p>
           </div>
           </div>
-            <p class="at">${data.user.handle}</p>
+            <p class="handle">${data.user.handle}</p>
           </header>
           <div class="txt">
           ${escape(data.content.text)}
@@ -110,7 +110,7 @@ $(document).ready(function() {
       $(this).children()[2].value = "! Your tweet is too long !";
       $(".error").slideDown(1000);
     } else if (tweetMessage.slice(5) === "") {
-      $(this).children()[2].value = "! You didn't tweet anything !";
+      $(this).children()[2].value = "! You didn't tweet anything ! ";
       $(".error").slideDown(1000);
     } else {
       $.ajax('/tweets/', {method: 'POST', data: tweetMessage})
@@ -118,7 +118,8 @@ $(document).ready(function() {
         $(".error").slideUp();
         loadTweets();
         $("#submit-tweet").children()[1].value = "";
-        $(".add").slideUp();
+        $(".new-tweet-box").slideUp();
+        $(".create-new-tweet").slideDown();
       });
     }
   }));
@@ -126,12 +127,12 @@ $(document).ready(function() {
   //The button of the nav, we lik on it to display adding new tweet
   $("#open-new-tweet").on('click', (function(event) {
     event.preventDefault();
-    $(".add").slideDown(1000);
+    $(".new-tweet-box").slideDown(1000);
   }));
 
   //annimation of the nav button when we hover it
   $("#open-new-tweet").hover(function() {
-    $(this).slideUp(200).slideDown(1000);
+    $(this).slideUp(300).slideDown(1000);
   });
 
   //loading the loal data

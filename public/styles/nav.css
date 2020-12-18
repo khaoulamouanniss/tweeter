@@ -13,17 +13,17 @@ nav span {
   font-family: "Bungee", cursive;
   padding: 1.5em;
 }
-nav .btn {
+nav .create-new-tweet {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin: 0cm;
 }
-nav .btn p {
+nav .create-new-tweet p {
   margin-bottom: 0px;
   margin-right: 20px;
 }
-nav .btn .sub {
+nav .create-new-tweet .button-new-tweet {
   display: flex;
   height: 26px;
 }

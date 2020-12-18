@@ -1,16 +1,16 @@
-.add {
+.new-tweet-box {
   text-align: left;
   margin-left: 20px;
   margin-top: 50px;
 }
-.add textarea {
+.new-tweet-box textarea {
   border: none;
   width: 100%;
   background-color: #f4f1ec;
   border-bottom: 4px solid black;
   font-family: "Source Sans Pro", sans-serif;
 }
-.add .error {
+.new-tweet-box .error {
   border: red solid !important;
   padding: 10px !important;
   border-radius: 0 !important;
@@ -23,16 +23,16 @@
   width: auto;
   height: 40px;
 }
-.add .add-tweet {
+.new-tweet-box .add-tweet {
   display: flex;
   justify-content: space-between;
   font-family: "Bungee", cursive;
 }
-.add .add-tweet .counter {
+.new-tweet-box .add-tweet .counter {
   display: flex;
   color: black;
 }
-.add .add-tweet .blue-btn {
+.new-tweet-box .add-tweet .blue-btn {
   background-color: #4056A1;
   color: white;
   display: flex;

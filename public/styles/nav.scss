@@ -15,17 +15,18 @@ nav {
     font-family: 'Bungee', cursive;
     padding: 1.5em;
   }
-  .btn {
+  .create-new-tweet {
     @include align-vertical;
     margin: 0cm;
     p {
       margin-bottom: 0px;
       margin-right: 20px;
     }
-    .sub {
+    .button-new-tweet {
       display: flex;
       height: 26px;
     }
+
   }
 }
 
