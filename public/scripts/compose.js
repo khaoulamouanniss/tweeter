@@ -12,9 +12,11 @@ $(document).ready(function() {
   $(window).scroll(function() {
     $("#up").slideDown(200);
     $(".btn").hide();
+    $(".add").hide();
     if($(this).scrollTop() === 0 ) {
       $("#up").hide();
       $(".btn").slideDown();
+
   }});
 
 });

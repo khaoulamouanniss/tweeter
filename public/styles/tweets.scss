@@ -12,7 +12,11 @@
 }
 
 .tweet:hover .at{
-display: block;
+  display: block;
+}
+
+.at {
+  display:none;
 }
 
 .tweet:hover {

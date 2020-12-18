@@ -58,7 +58,7 @@ $(document).ready(function() {
             <p>${data.user.name}</p>
           </div>
           </div>
-            <textarea rows="2" cols="50">${data.user.handle}</textarea>
+            <p class="at">${data.user.handle}</p>
           </header>
           <div class="txt">
           ${escape(data.content.text)}
@@ -131,7 +131,7 @@ $(document).ready(function() {
 
   //annimation of the nav button when we hover it
   $("#open-new-tweet").hover(function() {
-    $(this).slideUp(200).slideDown(200);
+    $(this).slideUp(200).slideDown(1000);
   });
 
   //loading the loal data

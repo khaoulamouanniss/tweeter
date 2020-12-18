@@ -13,6 +13,10 @@
   display: block;
 }
 
+.at {
+  display: none;
+}
+
 .tweet:hover {
   box-shadow: 10px 10px;
   font-weight: bolder;
