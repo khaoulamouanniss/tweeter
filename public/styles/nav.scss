@@ -10,29 +10,29 @@ nav {
   justify-content: space-between;
   position: fixed;
   top: 0;
+  span {
+    display: flex;
+    font-family: 'Bungee', cursive;
+    padding: 1.5em;
+  }
+  .btn {
+    display: flex;
+    flex-direction: column;
+    margin: 0cm;
+    p {
+      margin-bottom: 0px;
+      margin-right: 20px;
+    }
+    .sub {
+      display: flex;
+      align-self: center;
+      height: 26px;
+    }
+  }
 }
 
-nav span {
-  display: flex;
-  font-family: 'Bungee', cursive;
-  padding: 1.5em;
 
-}
 
-p {
-  margin-bottom: 0px;
-  margin-right: 20px;
-}
 
-.btn {
-  display: flex;
-  flex-direction: column;
-  margin: 0cm;
 
-}
 
-.sub {
-  display: flex;
-  align-self: center;
-  height: 26px;
-}

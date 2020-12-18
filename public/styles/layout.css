@@ -36,18 +36,15 @@ body {
   body {
     font-size: 20px;
   }
-
-  header.feature {
+  body .h {
     height: 170px;
   }
-
-  .profile-pic {
+  body .h .profile-pic {
     margin-top: 5px;
     width: 100px;
     height: 100px;
   }
-
-  header.feature h2 {
+  body .h h2 {
     font-size: 20px;
   }
 }
@@ -56,12 +53,10 @@ body {
   body {
     font-size: 25px;
   }
-
-  header.feature {
+  body .h {
     height: 250px;
   }
-
-  .profile-pic {
+  body .h .profile-pic {
     margin-top: 5px;
     width: 150px;
     height: 150px;
@@ -73,15 +68,13 @@ body {
     display: flex;
     flex-direction: row;
   }
-
-  header.feature {
+  body .h {
     display: flex;
     width: 30%;
     margin: 30px;
     margin-top: 170px;
   }
-
-  .content {
+  body .content {
     display: flex;
     margin-top: 120px;
     width: 60%;
@@ -94,26 +87,22 @@ body {
     display: flex;
     flex-direction: row;
   }
-
-  header.feature {
+  body .h {
     height: 550px;
     display: flex;
     width: 30%;
     margin: 30px;
     margin-top: 170px;
   }
-
-  .profile-pic {
+  body .h .profile-pic {
     margin-top: 5px;
     width: 400px;
     height: 400px;
   }
-
-  header.feature h2 {
+  body .h h2 {
     font-size: 50px;
   }
-
-  .content {
+  body .content {
     display: flex;
     margin-top: 120px;
     width: 60%;

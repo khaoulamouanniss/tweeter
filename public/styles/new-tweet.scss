@@ -1,38 +1,20 @@
 @import "globals";
 
-.blue-btn {
-  background-color: $navColor;
-  color: white;
-  display: flex;
-  border: none;
-}
 
-textarea {
-  border: none;
-  width:100%;
-  background-color: $BGColor;
-  border-bottom: 4px solid black;
-  font-family: $SSFont;
-}
+
+
 
 .add{
   text-align: left;
   margin-left: 20px;
   margin-top: 50px;
-}
-
-.add-tweet {
-display: flex;
-justify-content: space-between;
-font-family: $BungeeFont;
-}
-
-.counter{
-  display: flex;
-  color: black;
+  textarea {
+    border: none;
+    width:100%;
+    background-color: $BGColor;
+    border-bottom: 4px solid black;
+    font-family: $SSFont;
   }
-
-
   .error {
     border: red solid!important;
     padding: 10px !important;
@@ -46,4 +28,27 @@ font-family: $BungeeFont;
     width: auto;
     height: 40px;
   }
+  .add-tweet {
+    display: flex;
+    justify-content: space-between;
+    font-family: $BungeeFont;
+    .counter{
+      display: flex;
+      color: black;
+    }
+    .blue-btn {
+      background-color: $navColor;
+      color: white;
+      display: flex;
+      border: none;
+    }
+  }
+}
+
+
+
+
+
+
+
 

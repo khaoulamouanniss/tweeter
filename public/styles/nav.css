@@ -2,31 +2,27 @@ nav {
   height: 120px;
   width: 100%;
   background-color: #4056A1;
-  color: #ffffff;
+  color: white;
   display: flex;
   justify-content: space-between;
   position: fixed;
   top: 0;
 }
-
 nav span {
   display: flex;
   font-family: "Bungee", cursive;
   padding: 1.5em;
 }
-
-p {
-  margin-bottom: 0px;
-  margin-right: 20px;
-}
-
-.btn {
+nav .btn {
   display: flex;
   flex-direction: column;
   margin: 0cm;
 }
-
-.sub {
+nav .btn p {
+  margin-bottom: 0px;
+  margin-right: 20px;
+}
+nav .btn .sub {
   display: flex;
   align-self: center;
   height: 26px;

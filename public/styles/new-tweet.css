@@ -1,36 +1,16 @@
-.blue-btn {
-  background-color: #4056A1;
-  color: #ffffff;
-  display: flex;
-  border: none;
-}
-
-textarea {
-  border: none;
-  width: 100%;
-  background-color: #f4f1ec;
-  border-bottom: 4px solid #000;
-  font-family: "Source Sans Pro", sans-serif;
-}
-
 .add {
   text-align: left;
   margin-left: 20px;
   margin-top: 50px;
 }
-
-.add-tweet {
-  display: flex;
-  justify-content: space-between;
-  font-family: "Bungee", cursive;
+.add textarea {
+  border: none;
+  width: 100%;
+  background-color: #f4f1ec;
+  border-bottom: 4px solid black;
+  font-family: "Source Sans Pro", sans-serif;
 }
-
-.counter {
-  display: flex;
-  color: black;
-}
-
-.error {
+.add .error {
   border: red solid !important;
   padding: 10px !important;
   border-radius: 0 !important;
@@ -42,6 +22,21 @@ textarea {
   margin-bottom: 10px;
   width: auto;
   height: 40px;
+}
+.add .add-tweet {
+  display: flex;
+  justify-content: space-between;
+  font-family: "Bungee", cursive;
+}
+.add .add-tweet .counter {
+  display: flex;
+  color: black;
+}
+.add .add-tweet .blue-btn {
+  background-color: #4056A1;
+  color: white;
+  display: flex;
+  border: none;
 }
 
 /*# sourceMappingURL=new-tweet.css.map */

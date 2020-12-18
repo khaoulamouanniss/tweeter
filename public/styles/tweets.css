@@ -63,21 +63,18 @@ article.tweet footer {
   display: flex;
   justify-content: space-between;
 }
-
-.reaction {
-  margin-right: 20px;
-  margin-top: 0px;
-}
-
-.reaction img {
-  width: 22px;
-  height: auto;
-}
-
-.time {
+article.tweet footer .time {
   display: flex;
   font-size: smaller;
   margin-left: 20px;
+}
+article.tweet footer .reaction {
+  margin-right: 20px;
+  margin-top: 0px;
+}
+article.tweet footer .reaction img {
+  width: 22px;
+  height: auto;
 }
 
 /*# sourceMappingURL=tweets.css.map */

@@ -1,7 +1,7 @@
 
 @import "globals";
 
-header {
+.h {
   height: 400px;
   width: 100%;
   background-color: $headerColor;
@@ -10,14 +10,18 @@ header {
   display:flex;
   flex-direction: column;
   align-items: center;
-}
+
+  h2 {
+  display: flex;
+  }
+
 .profile-pic {
   display: flex;
   margin-top: 20px;
   }
-
-header h2 {
-  display: flex;
 }
+
+
+
 
 

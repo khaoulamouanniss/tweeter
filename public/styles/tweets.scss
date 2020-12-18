@@ -1,14 +1,14 @@
 @import "globals";
 
 .tweet {
-border: 4px solid black;
-width: 100%;
-margin-top: 10px;
-align-content: center;
-background-color: $BGColor;
-margin-left: 20px;
-font-family: $SSFont;
-font-weight: lighter;
+  border: 4px solid black;
+  width: 100%;
+  margin-top: 10px;
+  align-content: center;
+  background-color: $BGColor;
+  margin-left: 20px;
+  font-family: $SSFont;
+  font-weight: lighter;
 }
 
 .tweet:hover .at{
@@ -61,25 +61,28 @@ hr {
 }
 
 article.tweet footer {
-height: auto;
-width: 100%;
-display: flex;
-justify-content: space-between;
-}
-
-.reaction {
-  margin-right: 20px;
-  margin-top: 0px;
-}
-
-.reaction img {
-  width:22px;
-  height:auto;
-}
-
-
-.time {
+  height: auto;
+  width: 100%;
   display: flex;
-  font-size: smaller;
-  margin-left: 20px;
+  justify-content: space-between;
+  .time {
+    display: flex;
+    font-size: smaller;
+    margin-left: 20px;
+  }
+  .reaction {
+    margin-right: 20px;
+    margin-top: 0px;
+    img {
+      width:22px;
+      height:auto;
+    }
+  }
 }
+
+
+
+
+
+
+
