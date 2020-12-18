@@ -6,9 +6,9 @@ This repository is the starter code for the project: Students will fork and clon
 
 ## Final Product
 
-!["My URLs page whish show the list of URLs of the user logged in"](https://github.com/khaoulamouanniss/tinyapp/blob/master/docs/urls.jpg?raw=true)
-!["The login Page"](https://github.com/khaoulamouanniss/tinyapp/blob/master/docs/login.jpg?raw=true)
-!["The URL page where you can update it and see its shortURL and access to it"](https://github.com/khaoulamouanniss/tinyapp/blob/master/docs/urls_show.jpg?raw=true)
+!["My tweet page, shows the existing tweets"](https://github.com/khaoulamouanniss/tweeter/blob/master/docs/tweets.png?raw=true)
+!["Creating a new tweet"]((https://github.com/khaoulamouanniss/tweeter/blob/master/docs/new-tweet.png?raw=true)
+!["The tweet app on a smartphone"](https://github.com/khaoulamouanniss/tweeter/blob/master/docs/smartphone-tweet.png?raw=true)
 
 
 ## Getting Started
