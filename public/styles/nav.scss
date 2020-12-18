@@ -16,8 +16,7 @@ nav {
     padding: 1.5em;
   }
   .btn {
-    display: flex;
-    flex-direction: column;
+    @include align-vertical;
     margin: 0cm;
     p {
       margin-bottom: 0px;
@@ -25,7 +24,6 @@ nav {
     }
     .sub {
       display: flex;
-      align-self: center;
       height: 26px;
     }
   }

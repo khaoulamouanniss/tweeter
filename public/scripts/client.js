@@ -5,6 +5,7 @@
  */
 $(document).ready(function() {
   $(".error").hide();
+  $(".add").hide();
 const data = [
   {
     "user": {
@@ -103,24 +104,36 @@ $("#submit-tweet").on('submit', (function(event) {
   if (tweetMessage.slice(5).length > 140) {
 
     $(this).children()[2].value = "! Your tweet is too long !";
-    $(".error").slideDown(100);
+    $(".error").slideDown(1000);
   } else if (tweetMessage.slice(5) === "") {
 
     $(this).children()[2].value = "! You didn't tweet anything !";
-    $(".error").slideDown(100);
+    $(".error").slideDown(1000);
   } else {
     $.ajax('/tweets/', {method: 'POST', data: tweetMessage})
     .then(function (data) {
       $(".error").slideUp();
       loadTweets();
       $("#submit-tweet").children()[1].value = "";
-
+      $(".add").slideUp();
     });
   }
-
-
 }));
 
+$("#open-new-tweet").on('click', (function(event) {
+  event.preventDefault();
+  $(".add").slideDown(1000);
+}));
+
+$("#open-new-tweet").hover(function(){
+  $(this).slideUp(200).slideDown(200);
+});
+
 loadTweets();
-//renderTweets(data, $('#tweets'));
+$("#up").on('click', (function(event) {
+  event.preventDefault();
+  $(window).scrollTop(0);
+  $(".add").slideDown(1000);
+}));
+
 });

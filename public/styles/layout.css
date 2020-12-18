@@ -108,5 +108,10 @@ body {
     width: 60%;
   }
 }
+#up {
+  position: fixed;
+  bottom: 0px;
+  right: 0px;
+}
 
 /*# sourceMappingURL=layout.css.map */

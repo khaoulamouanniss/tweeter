@@ -7,9 +7,7 @@
   background-color: $headerColor;
   background-image: url("https://www.transparenttextures.com/patterns/ps-neutral.png");
   margin-top: 120px;
-  display:flex;
-  flex-direction: column;
-  align-items: center;
+  @include align-vertical;
 
   h2 {
   display: flex;

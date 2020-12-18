@@ -4,3 +4,9 @@ $BungeeFont: 'Bungee', cursive;
 $BGColor: #f4f1ec;
 $bodyColor: #545149;
 $navColor: #4056A1;
+
+@mixin align-vertical {
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+}
