@@ -4,136 +4,136 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 $(document).ready(function() {
+
+  // The error message, the box for adding new tweet and the button up will be hidden in the beginning
   $(".error").hide();
   $(".add").hide();
-const data = [
-  {
-    "user": {
-      "name": "Newton",
-      "avatars": "https://i.imgur.com/73hZDYK.png",
-      "handle": "@SirIsaac"
+  $("#up").hide();
+
+  //loal data to load
+  const data = [
+    {
+      "user": {
+        "name": "Newton",
+        "avatars": "https://i.imgur.com/73hZDYK.png",
+        "handle": "@SirIsaac"
+      },
+      "content": {
+        "text": "If I have seen further it is by standing on the shoulders of giants"
+      },
+      "created_at": 1461116232227
     },
-    "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
-    },
-    "created_at": 1461116232227
-  },
-  {
-    "user": {
-      "name": "Descartes",
-      "avatars": "https://i.imgur.com/nlhLi3I.png",
-      "handle": "@rd" },
-    "content": {
-      "text": "Je pense , donc je suis"
-    },
-    "created_at": 1461113959088
-  }
-];
+    {
+      "user": {
+        "name": "Descartes",
+        "avatars": "https://i.imgur.com/nlhLi3I.png",
+        "handle": "@rd" },
+      "content": {
+        "text": "Je pense , donc je suis"
+      },
+      "created_at": 1461113959088
+    }
+  ];
 
-const createTweetElement = function(data) {
-  let d = new Date(data.created_at);
-  const remainTime = Math.abs(new Date().getTime() - d);
-  const diffDays = Math.ceil(remainTime / (1000 * 3600 * 24));
-  let dateOfTweet = "";
-  if(diffDays > 30) {
-    dateOfTweet = Math.floor(diffDays / 365) + " years ago"
-  } else {
-    dateOfTweet = diffDays + " days ago"
-  }
+  //Function that calculate the remaining time in years or days
+  const calculateRemainTime = function(date) {
+    let d = new Date(date);
+    const remainTime = Math.abs(new Date().getTime() - d);
+    const diffDays = Math.ceil(remainTime / (1000 * 3600 * 24));
+    let dateOfTweet = "";
+    if (diffDays > 30) {
+      dateOfTweet = Math.floor(diffDays / 365) + " years ago";
+    } else {
+      dateOfTweet = diffDays + " days ago";
+    }
+    return dateOfTweet;
+  };
+  //Function that create the new tweeter
+  const createTweetElement = function(data) {
+    const $tweet = $(`<article class="tweet">
+          <header>
+            <div class="profil">
+            <img class="pic" src=${data.user.avatars}>
+            <div>
+            <p>${data.user.name}</p>
+          </div>
+          </div>
+            <textarea rows="2" cols="50">${data.user.handle}</textarea>
+          </header>
+          <div class="txt">
+          ${escape(data.content.text)}
+          </div>
+          <hr></hr>
+          <footer>
+            <div class="time">
+            ${calculateRemainTime(data.created_at)}
+          </div>
+            <div class="reaction">
+            <img src="./images/react1.png" alt="Submit" >
+            <img src="./images/react2.png" alt="Submit" >
+            <img src="./images/react3.png" alt="Submit" >
+          </div>
+          </footer>
 
-  const $tweet = $(`<article class="tweet">
-        <header>
-          <div class="profil">
-          <img class="pic" src=${data.user.avatars}>
-          <divx>
-          <p>${data.user.name}</p>
-        </div>
-        </div>
-          <textarea rows="2" cols="50">${data.user.handle}</textarea>
-        </header>
-        <div class="txt">
-        ${escape(data.content.text)}
-        </div>
-        <hr></hr>
-        <footer>
-          <div class="time">
-          ${dateOfTweet}
-        </div>
-          <div class="reaction">
-          <img src="./images/react1.png" alt="Submit" >
-          <img src="./images/react2.png" alt="Submit" >
-          <img src="./images/react3.png" alt="Submit" >
-        </div>
-        </footer>
+          </article>`);
+    return $tweet;
+  };
 
-        </article>`);
-        return $tweet;
-};
+  //Fnction that rend an array of tweets to the section with the id=tweets
+  const renderTweets = function(tweets, section) {
+    for (let t of tweets) {
+      let $tweet = createTweetElement(t);
+      section.prepend($tweet);
+    }
+  };
 
-
-const renderTweets = function(tweets, section) {
-  // loops through tweets
-  // calls createTweetElement for each tweet
-  // takes return value and appends it to the tweets container
-  for ( let t of tweets) {
-    let $tweet = createTweetElement(t);
-    section.prepend($tweet);
-  }
-};
-
-const loadTweets = function() {
-  $.ajax('/tweets/', {method: 'GET'})
-  .then (function (data) {
-
-      renderTweets(data,$('#tweets'));
-
-  });
-};
-
-const escape =  function(str) {
-  let div = document.createElement('div');
-  div.appendChild(document.createTextNode(str));
-  return div.innerHTML;
-}
-
-$("#submit-tweet").on('submit', (function(event) {
-  event.preventDefault();
-
-  const tweetMessage =  $(this).serialize();
-
-  if (tweetMessage.slice(5).length > 140) {
-
-    $(this).children()[2].value = "! Your tweet is too long !";
-    $(".error").slideDown(1000);
-  } else if (tweetMessage.slice(5) === "") {
-
-    $(this).children()[2].value = "! You didn't tweet anything !";
-    $(".error").slideDown(1000);
-  } else {
-    $.ajax('/tweets/', {method: 'POST', data: tweetMessage})
+  //Function that load the tweets from our route
+  const loadTweets = function() {
+    $.ajax('/tweets/', {method: 'GET'})
     .then(function (data) {
-      $(".error").slideUp();
-      loadTweets();
-      $("#submit-tweet").children()[1].value = "";
-      $(".add").slideUp();
+      renderTweets(data,$('#tweets'));
     });
-  }
-}));
+  };
 
-$("#open-new-tweet").on('click', (function(event) {
-  event.preventDefault();
-  $(".add").slideDown(1000);
-}));
+  //Function escape for escaping maliious messages sent by user
+  const escape =  function(str) {
+    let div = document.createElement('div');
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
 
-$("#open-new-tweet").hover(function(){
-  $(this).slideUp(200).slideDown(200);
-});
+  //submit a new tweet and load it dynamically
+  $("#submit-tweet").on('submit', (function(event) {
+    event.preventDefault();
+    const tweetMessage =  $(this).serialize();
+    if (tweetMessage.slice(5).length > 140) {
+      $(this).children()[2].value = "! Your tweet is too long !";
+      $(".error").slideDown(1000);
+    } else if (tweetMessage.slice(5) === "") {
+      $(this).children()[2].value = "! You didn't tweet anything !";
+      $(".error").slideDown(1000);
+    } else {
+      $.ajax('/tweets/', {method: 'POST', data: tweetMessage})
+      .then(function(data) {
+        $(".error").slideUp();
+        loadTweets();
+        $("#submit-tweet").children()[1].value = "";
+        $(".add").slideUp();
+      });
+    }
+  }));
 
-loadTweets();
-$("#up").on('click', (function(event) {
-  event.preventDefault();
-  $(window).scrollTop(0);
-  $(".add").slideDown(1000);
-}));
+  //The button of the nav, we lik on it to display adding new tweet
+  $("#open-new-tweet").on('click', (function(event) {
+    event.preventDefault();
+    $(".add").slideDown(1000);
+  }));
 
+  //annimation of the nav button when we hover it
+  $("#open-new-tweet").hover(function() {
+    $(this).slideUp(200).slideDown(200);
+  });
+
+  //loading the loal data
+  loadTweets();
 });
