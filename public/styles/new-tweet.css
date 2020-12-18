@@ -1,5 +1,3 @@
-
-
 .blue-btn {
   background-color: #4056A1;
   color: #ffffff;
@@ -9,41 +7,41 @@
 
 textarea {
   border: none;
-  width:100%;
+  width: 100%;
   background-color: #f4f1ec;
   border-bottom: 4px solid #000;
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: "Source Sans Pro", sans-serif;
 }
 
-.add{
+.add {
   text-align: left;
   margin-left: 20px;
   margin-top: 50px;
 }
 
 .add-tweet {
-display: flex;
-justify-content: space-between;
-font-family: 'Bungee', cursive;
+  display: flex;
+  justify-content: space-between;
+  font-family: "Bungee", cursive;
 }
 
-.counter{
+.counter {
   display: flex;
   color: black;
-  }
+}
 
+.error {
+  border: red solid !important;
+  padding: 10px !important;
+  border-radius: 0 !important;
+  background: invisible;
+  color: red;
+  font-weight: bolder;
+  box-shadow: 2px 2px 2px #aaaaaa;
+  background-color: inherit;
+  margin-bottom: 10px;
+  width: auto;
+  height: 40px;
+}
 
-  .error {
-    border: red solid!important;
-    padding: 10px !important;
-    border-radius: 0 !important;
-    background: invisible;
-    color: red;
-    font-weight: bolder;
-    box-shadow: 2px 2px 2px #aaaaaa;
-    background-color: inherit;
-    margin-bottom: 10px;
-    width: auto;
-    height: 40px;
-  }
-
+/*# sourceMappingURL=new-tweet.css.map */

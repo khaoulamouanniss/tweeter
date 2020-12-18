@@ -1,0 +1,49 @@
+@import "globals";
+
+.blue-btn {
+  background-color: $navColor;
+  color: white;
+  display: flex;
+  border: none;
+}
+
+textarea {
+  border: none;
+  width:100%;
+  background-color: $BGColor;
+  border-bottom: 4px solid black;
+  font-family: $SSFont;
+}
+
+.add{
+  text-align: left;
+  margin-left: 20px;
+  margin-top: 50px;
+}
+
+.add-tweet {
+display: flex;
+justify-content: space-between;
+font-family: $BungeeFont;
+}
+
+.counter{
+  display: flex;
+  color: black;
+  }
+
+
+  .error {
+    border: red solid!important;
+    padding: 10px !important;
+    border-radius: 0 !important;
+    background: invisible;
+    color: red;
+    font-weight: bolder;
+    box-shadow: 2px 2px 2px #aaaaaa;
+    background-color: inherit;
+    margin-bottom: 10px;
+    width: auto;
+    height: 40px;
+  }
+

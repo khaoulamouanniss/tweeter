@@ -1,8 +1,11 @@
+@import "globals";
+
 nav {
+
   height: 120px;
   width: 100%;
-  background-color: #4056A1;
-  color: #ffffff;
+  background-color: $navColor;
+  color: white;
   display: flex;
   justify-content: space-between;
   position: fixed;
@@ -11,8 +14,9 @@ nav {
 
 nav span {
   display: flex;
-  font-family: "Bungee", cursive;
+  font-family: 'Bungee', cursive;
   padding: 1.5em;
+
 }
 
 p {
@@ -24,6 +28,7 @@ p {
   display: flex;
   flex-direction: column;
   margin: 0cm;
+
 }
 
 .sub {
@@ -31,5 +36,3 @@ p {
   align-self: center;
   height: 26px;
 }
-
-/*# sourceMappingURL=nav.css.map */
