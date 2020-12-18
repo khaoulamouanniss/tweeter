@@ -5,7 +5,6 @@
   color: #ffffff;
   display: flex;
   border: none;
-  padding: 6px;
 }
 
 textarea {
@@ -14,12 +13,12 @@ textarea {
   background-color: #f4f1ec;
   border-bottom: 4px solid #000;
   font-family: 'Source Sans Pro', sans-serif;
-  padding: initial;
 }
 
 .add{
   text-align: left;
   margin-left: 20px;
+  margin-top: 50px;
 }
 
 .add-tweet {
@@ -42,6 +41,7 @@ font-family: 'Bungee', cursive;
     color: red;
     font-weight: bolder;
     box-shadow: 2px 2px 2px #aaaaaa;
+    background-color: inherit;
     margin-bottom: 10px;
     width: auto;
     height: 40px;

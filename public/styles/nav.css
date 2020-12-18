@@ -17,13 +17,20 @@ nav span {
 
 }
 
+p {
+  margin-bottom: 0px;
+  margin-right: 20px;
+}
+
 .btn {
   display: flex;
   flex-direction: column;
-  justify-content: start;
+  margin: 0cm;
+
 }
 
 .sub {
   display: flex;
   align-self: center;
+  height: 26px;
 }

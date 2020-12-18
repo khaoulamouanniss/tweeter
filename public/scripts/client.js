@@ -48,7 +48,7 @@ const createTweetElement = function(data) {
           <p>${data.user.name}</p>
         </div>
         </div>
-          <p class="at">${data.user.handle}</p>
+          <textarea rows="2" cols="50">${data.user.handle}</textarea>
         </header>
         <div class="txt">
         ${escape(data.content.text)}
@@ -56,13 +56,12 @@ const createTweetElement = function(data) {
         <hr></hr>
         <footer>
           <div class="time">
-          <p>${dateOfTweet}</p>
+          ${dateOfTweet}
         </div>
           <div class="reaction">
-          <i class="far fa-flag"></i>
-          <input type="image" src="./images/react1.png" alt="Submit" >
-          <input type="image" src="./images/react2.png" alt="Submit" >
-          <input type="image" src="./images/react3.png" alt="Submit" >
+          <img src="./images/react1.png" alt="Submit" >
+          <img src="./images/react2.png" alt="Submit" >
+          <img src="./images/react3.png" alt="Submit" >
         </div>
         </footer>
 
@@ -103,11 +102,11 @@ $("#submit-tweet").on('submit', (function(event) {
 
   if (tweetMessage.slice(5).length > 140) {
 
-    $(this).children()[2].value = "Your tweet is too long!";
+    $(this).children()[2].value = "! Your tweet is too long !";
     $(".error").slideDown(100);
   } else if (tweetMessage.slice(5) === "") {
 
-    $(this).children()[2].value = "You didn't tweet anything!";
+    $(this).children()[2].value = "! You didn't tweet anything !";
     $(".error").slideDown(100);
   } else {
     $.ajax('/tweets/', {method: 'POST', data: tweetMessage})

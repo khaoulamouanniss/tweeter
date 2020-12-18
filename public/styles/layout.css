@@ -32,21 +32,90 @@ body {
   flex-direction: column;
 }
 
-@media only screen and (min-width: 768px) {
+/* Smart phones */
+@media only screen and (max-width: 767px){
+  body {
+    font-size: 20px;
+  }
+  header.feature {
+    height:170px;
+
+  }
+  .profile-pic {
+    margin-top: 5px;
+    width : 100px;
+    height: 100px;
+    }
+  header.feature h2 {
+    font-size: 20px;
+  }
+}
+
+/* Tablet */
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+  body {
+    font-size: 25px;
+  }
+  header.feature {
+    height:250px;
+
+  }
+.profile-pic {
+      margin-top: 5px;
+      width : 150px;
+      height: 150px;
+      }
+}
+
+/* Desktop */
+@media only screen and (min-width: 1024px) and (max-width: 1439px) {
   body {
     display: flex;
     flex-direction: row;
   }
   header.feature {
     display: flex;
-    width: 30%;
-    height:auto;
+    width:30%;
+    margin: 30px;
+    margin-top: 170px;
+
   }
   .content {
     display: flex;
-
     margin-top: 120px;
+    width:60%;
   }
+
+}
+
+/* Large desktop */
+@media only screen and (min-width: 1440px) {
+  body {
+    font-size: 35px;
+    display: flex;
+    flex-direction: row;
+  }
+  header.feature {
+    height: 550px;
+    display: flex;
+    width:30%;
+    margin: 30px;
+    margin-top: 170px;
+  }
+  .profile-pic {
+    margin-top: 5px;
+    width : 400px;
+    height: 400px;
+    }
+  header.feature h2 {
+    font-size: 50px;
+  }
+  .content {
+    display: flex;
+    margin-top: 120px;
+    width:60%;
+  }
+
 
 }
 

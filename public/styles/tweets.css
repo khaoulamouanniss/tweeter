@@ -35,7 +35,7 @@ display: flex;
 
 }
 
-.at{
+article.tweet textarea{
   margin-right: 4px;
   display: flex;
   display: none;
@@ -66,14 +66,18 @@ justify-content: space-between;
 }
 
 .reaction {
-  display: flex;
-  width :auto;
-  height: 20px;
   margin-right: 20px;
+  margin-top: 0px;
 }
+
+.reaction img {
+  width:22px;
+  height:auto;
+}
+
 
 .time {
   display: flex;
-  font-size: small;
+  font-size: smaller;
   margin-left: 20px;
 }

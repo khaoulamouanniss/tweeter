@@ -1,8 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- Meta Information -->
+
     <title>Tweeter</title>
+
+    <!-- Meta Information -->
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
 
     <!-- External CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" type="text/css" />
@@ -28,6 +31,7 @@
     <!-- App JS -->
     <script type="text/javascript" src="./scripts/client.js"></script>
     <script src="./scripts/composer-char-counter.js"></script>
+
   </head>
 
   <body>
@@ -40,31 +44,25 @@
           <input type="image" src="./images/btn.png" alt="Submit" >
         </div>
       </div>
-
     </nav>
 
     <header class= "feature">
-
-        <img class="profil" src="./images/profile-hex.png">
-
-        <h2>Khaoula</h2>
+      <img class="profile-pic" src="./images/profile-200.png"/>
+      <h2>Khaoula</h2>
     </header>
 
     <!-- Page-specific (main) content here -->
     <main class="content">
-      <section>
-        <div class="add">
-          <h2>Compose Tweet</h2>
+      <section class="add">
           <form id = "submit-tweet" action="/tweets/" method="POST">
             <label for="tweet-text">What are you humming about?</label>
             <textarea name="text" id="tweet-text" rows="2" cols="50"></textarea>
-            <input  class="error"></input>
+            <input  class="error" ></input>
             <div class="add-tweet">
               <button id="btn-tweet" class="blue-btn" type="submit">Tweet</button>
               <output name="counter" class="counter" for="tweet-text">140</output>
             </div>
           </form>
-        </div>
       </section>
       <section id="tweets">
       </section>
