@@ -10,7 +10,7 @@ $(document).ready(function() {
   $(".new-tweet-box").hide();
   $("#up").hide();
 
-  //loal data to load
+  //local data to load
   const data = [
     {
       "user": {
@@ -79,19 +79,31 @@ $(document).ready(function() {
     return $tweet;
   };
 
+  //function to load the new tweet just added
+  const loadNewTweet = function(textMessage) {
+    $.ajax('/tweets/', {method: 'GET'})
+    .then(function (data) {
+      for (let t of data) {
+        if (t.content.text === textMessage){
+          renderTweets(t,$('#tweets'));
+        }
+      }
+    });
+  };
+
   //Fnction that rend an array of tweets to the section with the id=tweets
-  const renderTweets = function(tweets, section) {
-    for (let t of tweets) {
-      let $tweet = createTweetElement(t);
+  const renderTweets = function(tweet, section) {
+      let $tweet = createTweetElement(tweet);
       section.prepend($tweet);
-    }
   };
 
   //Function that load the tweets from our route
   const loadTweets = function() {
     $.ajax('/tweets/', {method: 'GET'})
     .then(function (data) {
-      renderTweets(data,$('#tweets'));
+      for (let t of data) {
+        renderTweets(t,$('#tweets'));
+      }
     });
   };
 
@@ -116,7 +128,7 @@ $(document).ready(function() {
       $.ajax('/tweets/', {method: 'POST', data: tweetMessage})
       .then(function(data) {
         $(".error").slideUp();
-        loadTweets();
+        loadNewTweet(tweetMessage.slice(5))
         $("#submit-tweet").children()[1].value = "";
         $(".new-tweet-box").slideUp();
         $(".create-new-tweet").slideDown();
