@@ -92,7 +92,7 @@ $(document).ready(function() {
   //submit a new tweet and load it dynamically
   $("#submit-tweet").on('submit', (function(event) {
     event.preventDefault();
-    const tweetMessage =  $(this).serialize();
+    const tweetMessage =  $(this);
     if ($(this).slice(5).length > 140) {
       $(this).children()[2].value = "! Your tweet is too long !";
       $(".error").slideDown();
@@ -100,13 +100,13 @@ $(document).ready(function() {
       $(this).children()[2].value = "! You didn't tweet anything ! ";
       $(".error").slideDown();
     } else {
-      $.ajax('/tweets/', {method: 'POST', data: $(this)})
+      $.ajax('/tweets/', {method: 'POST', data: tweetMessage.serialize()})
       .then(function() {
         $(".error").slideUp();
         $('#tweet-text').val("");
         $('.counter').text('140');
         //loadTweets();
-       loadNewTweet(tweetMessage.slice(5));
+       loadNewTweet(tweetMessage);
         $("#submit-tweet").children()[1].value = "";
         $(".new-tweet-box").slideUp();
         $(".create-new-tweet").slideDown();
