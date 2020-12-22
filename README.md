@@ -7,7 +7,7 @@ This repository is the starter code for the project: Students will fork and clon
 ## Final Product
 
 !["My tweet page, shows the existing tweets"](https://github.com/khaoulamouanniss/tweeter/blob/master/docs/tweets.png?raw=true)
-!["Creating a new tweet"]((https://github.com/khaoulamouanniss/tweeter/blob/master/docs/new-tweet.png?raw=true)
+!["Creating a new tweet"](https://github.com/khaoulamouanniss/tweeter/blob/master/docs/new-tweet.png?raw=true)
 !["The tweet app on a smartphone"](https://github.com/khaoulamouanniss/tweeter/blob/master/docs/smartphone-tweet.png?raw=true)
 
 
