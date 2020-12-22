@@ -14,7 +14,6 @@ $(document).ready(function() {
     $("#up").slideDown(200);
     if($(this).scrollTop() === 0 ) {
       $("#up").hide();
-
   }});
 
 });
