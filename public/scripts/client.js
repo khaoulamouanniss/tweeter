@@ -13,8 +13,8 @@ $(document).ready(function() {
 
   //Function that calculate the remaining time in years or days
   const calculateRemainTime = function(date) {
-    let d = new Date(date);
-    const remainTime = Math.abs(new Date().getTime() - d);
+    let dateOfCreation = new Date(date);
+    const remainTime = Math.abs(new Date().getTime() - dateOfCreation);
     const diffDays = Math.ceil(remainTime / (1000 * 3600 * 24));
     let dateOfTweet = "";
     if (diffDays > 30) {
@@ -53,19 +53,6 @@ $(document).ready(function() {
     return $tweet;
   };
 
-  //function to load the new tweet just added
-  const loadNewTweet = function(textMessage) {
-    console.log(textMessage)
-    $.ajax('/tweets/', {method: 'GET'})
-      .then((data) => function (data) {
-        for (let tweet of data) {
-          if (tweet.content.text === textMessage){
-            renderTweet(tweet,$('#tweets'));
-          }
-        }
-      });
-    };
-
   //Fnction that rend an array of tweets to the section with the id=tweets
   const renderTweet = function(tweet, section) {
       let $tweet = createTweetElement(tweet);
@@ -82,7 +69,7 @@ $(document).ready(function() {
     });
   };
 
-  //Function escape for escaping maliious messages sent by user
+  //Function escape for escaping malicious messages sent by user
   const escape =  function(str) {
     let div = document.createElement('div');
     div.appendChild(document.createTextNode(str));
@@ -92,21 +79,22 @@ $(document).ready(function() {
   //submit a new tweet and load it dynamically
   $("#submit-tweet").on('submit', (function(event) {
     event.preventDefault();
-    const tweetMessage =  $(this);
-    if ($(this).slice(5).length > 140) {
+    const tweetMessage =  $(this).serialize();
+    const inputMessage = $(this).children('textarea').val();
+    console.log(inputMessage);
+    if (inputMessage.length > 140) {
       $(this).children()[2].value = "! Your tweet is too long !";
       $(".error").slideDown();
-    } else if ($(this).slice(5) === "") {
+    } else if (!inputMessage) {
       $(this).children()[2].value = "! You didn't tweet anything ! ";
       $(".error").slideDown();
     } else {
-      $.ajax('/tweets/', {method: 'POST', data: tweetMessage.serialize()})
+      $.ajax('/tweets/', {method: 'POST', data: tweetMessage})
       .then(function() {
         $(".error").slideUp();
         $('#tweet-text').val("");
         $('.counter').text('140');
-        //loadTweets();
-       loadNewTweet(tweetMessage);
+        loadTweets();
         $("#submit-tweet").children()[1].value = "";
         $(".new-tweet-box").slideUp();
         $(".create-new-tweet").slideDown();
