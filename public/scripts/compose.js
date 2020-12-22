@@ -12,12 +12,8 @@ $(document).ready(function() {
 
   $(window).scroll(function() {
     $("#up").slideDown(200);
-    $(".create-new-tweet").hide();
-    $(".new-tweet-box").hide();
     if($(this).scrollTop() === 0 ) {
       $("#up").hide();
-      $(".new-tweet-box").slideDown();
-      $(".create-new-tweet").hide();
   }});
-
+  
 });
