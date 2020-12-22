@@ -10,30 +10,6 @@ $(document).ready(function() {
   $(".new-tweet-box").hide();
   $("#up").hide();
 
-  //local data to load
-  const data = [
-    {
-      "user": {
-        "name": "Newton",
-        "avatars": "https://i.imgur.com/73hZDYK.png",
-        "handle": "@SirIsaac"
-      },
-      "content": {
-        "text": "If I have seen further it is by standing on the shoulders of giants"
-      },
-      "created_at": 1461116232227
-    },
-    {
-      "user": {
-        "name": "Descartes",
-        "avatars": "https://i.imgur.com/nlhLi3I.png",
-        "handle": "@rd" },
-      "content": {
-        "text": "Je pense , donc je suis"
-      },
-      "created_at": 1461113959088
-    }
-  ];
 
   //Function that calculate the remaining time in years or days
   const calculateRemainTime = function(date) {
@@ -60,9 +36,7 @@ $(document).ready(function() {
           </div>
             <p class="handle">${data.user.handle}</p>
           </header>
-          <div class="txt">
-          ${escape(data.content.text)}
-          </div>
+          <textarea cols="50" rows="3" id="txt" readonly>${escape(data.content.text)}</textarea>
           <hr></hr>
           <footer>
             <div class="time">
@@ -81,18 +55,19 @@ $(document).ready(function() {
 
   //function to load the new tweet just added
   const loadNewTweet = function(textMessage) {
+    console.log(textMessage)
     $.ajax('/tweets/', {method: 'GET'})
-    .then(function (data) {
-      for (let t of data) {
-        if (t.content.text === textMessage){
-          renderTweets(t,$('#tweets'));
+      .then((data) => function (data) {
+        for (let tweet of data) {
+          if (tweet.content.text === textMessage){
+            renderTweet(tweet,$('#tweets'));
+          }
         }
-      }
-    });
-  };
+      });
+    };
 
   //Fnction that rend an array of tweets to the section with the id=tweets
-  const renderTweets = function(tweet, section) {
+  const renderTweet = function(tweet, section) {
       let $tweet = createTweetElement(tweet);
       section.prepend($tweet);
   };
@@ -101,8 +76,8 @@ $(document).ready(function() {
   const loadTweets = function() {
     $.ajax('/tweets/', {method: 'GET'})
     .then(function (data) {
-      for (let t of data) {
-        renderTweets(t,$('#tweets'));
+      for (let tweet of data) {
+        renderTweet(tweet,$('#tweets'));
       }
     });
   };
@@ -118,17 +93,20 @@ $(document).ready(function() {
   $("#submit-tweet").on('submit', (function(event) {
     event.preventDefault();
     const tweetMessage =  $(this).serialize();
-    if (tweetMessage.slice(5).length > 140) {
+    if ($(this).slice(5).length > 140) {
       $(this).children()[2].value = "! Your tweet is too long !";
-      $(".error").slideDown(1000);
-    } else if (tweetMessage.slice(5) === "") {
+      $(".error").slideDown();
+    } else if ($(this).slice(5) === "") {
       $(this).children()[2].value = "! You didn't tweet anything ! ";
-      $(".error").slideDown(1000);
+      $(".error").slideDown();
     } else {
-      $.ajax('/tweets/', {method: 'POST', data: tweetMessage})
-      .then(function(data) {
+      $.ajax('/tweets/', {method: 'POST', data: $(this)})
+      .then(function() {
         $(".error").slideUp();
-        loadNewTweet(tweetMessage.slice(5))
+        $('#tweet-text').val("");
+        $('.counter').text('140');
+        //loadTweets();
+       loadNewTweet(tweetMessage.slice(5));
         $("#submit-tweet").children()[1].value = "";
         $(".new-tweet-box").slideUp();
         $(".create-new-tweet").slideDown();
@@ -144,9 +122,10 @@ $(document).ready(function() {
 
   //annimation of the nav button when we hover it
   $("#open-new-tweet").hover(function() {
-    $(this).slideUp(300).slideDown(1000);
+    $(this).animate({opacity: '0.5',
+    height: '50px',
+    }, "slow");
   });
 
-  //loading the loal data
   loadTweets();
 });

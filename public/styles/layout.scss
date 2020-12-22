@@ -24,7 +24,6 @@ body {
   background-color: $BGColor;
   font-size: 24px;
   font-family: $SSFont;
-
 }
 
 /*
@@ -35,6 +34,13 @@ body {
   text-align: center;
   background-color: $BGColor;
   flex-direction: column;
+}
+
+//The button UP
+#up {
+  position: fixed;
+  bottom: 0px;
+  right: 0px;
 }
 
 /* Smart phones */
@@ -113,16 +119,11 @@ body {
         h2 {
           font-size: 50px;
         }
-    }
+      }
     .content {
       display: flex;
       margin-top: 120px;
       width:60%;
     }
   }
-}
-#up {
-  position: fixed;
-  bottom: 0px;
-  right: 0px;
 }

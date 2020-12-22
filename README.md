@@ -27,7 +27,7 @@ This repository is the starter code for the project: Students will fork and clon
 
 ## Functionalities:
 
-- This application is developped to be used in all devices (smartphone, laptop, large desktop, tablets).
+- This application is developed to be used in all devices (smartphone, laptop, large desktop, tablets).
 - You can add a tweet by clicking on the animated button when you hover on it in the nav tab.
 - When you scroll down, a button is showed in the right bottom.
 - A click on the bottom button, the page scroll up and shows the add tweeter box.

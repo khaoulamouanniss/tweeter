@@ -38,22 +38,23 @@ article.tweet header {
   display: flex;
 }
 
-article.tweet textarea {
+/*article.tweet textarea{
   margin-right: 4px;
   display: flex;
   display: none;
   color: grey;
-}
-
+}*/
 .pic {
   width: 4rem;
   height: 4rem;
 }
 
-.txt {
+#txt {
   background-color: transparent;
   text-align: left;
-  margin: 30px;
+  border: none;
+  width: 90%;
+  height: auto;
 }
 
 hr {
