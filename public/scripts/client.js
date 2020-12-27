@@ -94,6 +94,8 @@ $(document).ready(function() {
         $(".error").slideUp();
         $('#tweet-text').val("");
         $('.counter').text('140');
+       // loadTweets();
+        $('#tweets').empty();
         loadTweets();
         $("#submit-tweet").children()[1].value = "";
         $(".new-tweet-box").slideUp();
@@ -102,7 +104,7 @@ $(document).ready(function() {
     }
   }));
 
-  //The button of the nav, we lik on it to display adding new tweet
+  //The button of the nav, we click on it to display adding new tweet
   $("#open-new-tweet").on('click', (function(event) {
     event.preventDefault();
     $(".new-tweet-box").slideDown(1000);
